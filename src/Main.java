@@ -1,3 +1,5 @@
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Scanner;
 
 //TIP 코드를 <b>실행</b>하려면 <shortcut actionId="Run"/>을(를) 누르거나
@@ -5,15 +7,33 @@ import java.util.Scanner;
 public class Main {
     public static void main(String[] args) {
 
-        Scanner sc = new Scanner(System.in);   // 입출력 받을 객체
+        List<MenuItem> menuItems = new ArrayList<>(); // List 선언 및 초기화
+        MenuItem m1 = new MenuItem("ShackBurger", 6.9, "토마토, 양상추, 쉑소스가 토핑된 치즈버거");
+        MenuItem m2 = new MenuItem("SmokeShack", 8.9, "베이컨, 체리 페퍼에 쉑소스가 토핑된 치즈버거");
+        MenuItem m3 = new MenuItem("Cheeseburger", 6.9, "포테이토 번과 비프패티, 치즈가 토핑된 치즈버거");
+        MenuItem m4 = new MenuItem("Hamburger", 5.4, "비프패티를 기반으로 야채가 들어간 기본버거");
+
+        // add 함수를 통해 new MenuItem(이름, 가격, 설명) List에 삽입
+        menuItems.add(m1);
+        menuItems.add(m2);
+        menuItems.add(m3);
+        menuItems.add(m4);
+
+
+        // 입출력 받을 객체
+        // Scanner 선언
+        Scanner sc = new Scanner(System.in);
+
 
         while(true){
-            System.out.println("1. ShackBurger   | W 6.9 | 토마토, 양상추, 쉑소스가 토핑된 치즈버거");
-            System.out.println("2. SmokeShack    | W 8.9 | 베이컨, 체리 페퍼에 쉑소스가 토핑된 치즈버거");
-            System.out.println("3. Cheeseburger  | W 6.9 | 포테이토 번과 비프패티, 치즈가 토핑된 치즈버거");
-            System.out.println("4. Hamburger     | W 5.4 | 비프패티를 기반으로 야채가 들어간 기본버거");
+            // 메뉴 앞에 매겨줄 번호
+            int menuNum = 1;
+            for(MenuItem menuItem : menuItems){
+                System.out.print(menuNum + ". ");
+                menuItem.printedMenu();
+                menuNum++; // 메뉴마다 번호를 다르게 매겨주기 위해 반복할떄마다 1을 증가시켜줌.
+            }
             System.out.println("0. 종료      | 종료");
-
             System.out.println("원하시는 메뉴의 숫자를 입력해주세요.");
             int selectedNum = sc.nextInt();
 
