@@ -6,9 +6,11 @@ import java.util.Scanner;
 // 에디터 여백에 있는 <icon src="AllIcons.Actions.Execute"/> 아이콘을 클릭하세요.
 public class Main {
     public static void main(String[] args) {
+        List<String> categories = List.of("Burgers","Drinks","Deserts"); // 메뉴 객체 생성시 넣어줄 카테고리 리스트
 
-    Kiosk kiosk = new Kiosk();
+        Menu menu = new Menu(categories); // 객체 생성 동시에 카테고리 이름을 매개변수로 넣어서 카테고리 리스트에 값을 설정
 
-    kiosk.start();
+        Kiosk kiosk = new Kiosk();
+        kiosk.start(menu);
     }
 }
