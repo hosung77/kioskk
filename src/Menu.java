@@ -4,9 +4,12 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Menu {
+    // 필드
 
     private List<String> categoryNames = new ArrayList<>(); // 카테고리 이름 필드
     private List<MenuItem> menuItems = new ArrayList<>(); // MenuItem 클래스를 List로 관리
+
+    // 생성자
 
     public Menu(List<String> categoryName) {
 
@@ -23,6 +26,8 @@ public class Menu {
         menuItems.add(m4);
     }
 
+    // 메서드
+
     // List에 포함된 MenuItem을 순차적으로 보여주는 함수
     public void printMenuItem (){
         // 메뉴 앞에 매겨줄 번호
@@ -34,6 +39,7 @@ public class Menu {
         }
     }
 
+    // 순차적으로 카테고리명들을 출력해주는 함수
     public void printedCategories(){
         // 메뉴 앞에 매겨줄 번호
         int categoriesNum = 1;
@@ -44,9 +50,24 @@ public class Menu {
         }
     }
 
-    // List를 리턴하는 함수
+    // menuItems의 ArrayList에 List추가
+    public void addMenuItems(MenuItem menuItem){
+        this.menuItems.add(menuItem);
+    }
+
+    // 카테고리 추가 메서드
+    public void addCategory(String categoryN){
+        this.categoryNames.add(categoryN);
+    }
+
+    // 게터
+
     public List<MenuItem> getMenuItems() {
         return this.menuItems;
+    }
+
+    public List<String> getCategoryNames(){
+        return this.categoryNames;
     }
 
 

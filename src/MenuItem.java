@@ -1,15 +1,23 @@
 import java.util.List;
 
 public class MenuItem {
+
+    // 필드
+
     private String menuName; // 메뉴명
     private Double price; //  메뉴 가격
     private String description; // 메뉴 설명
+
+
+    // 생성자
 
     public MenuItem(String menuName, Double price, String description){
         this.menuName = menuName;
         this.price = price;
         this.description = description;
     }
+
+    // 메서드
 
     public void printedMenu(){
         System.out.println(menuName + "      | W " + price + " | " + description);
@@ -21,6 +29,7 @@ public class MenuItem {
 
     }
 
+    // 게터
 
     public String getMenuName(){
         return this.menuName;
@@ -34,6 +43,18 @@ public class MenuItem {
         return this.description;
     }
 
+    // 세터
 
+    public void setMenuName(String menuN){
+        this.menuName = menuN;
+    }
+
+    public void setPrice(Double menuP){
+        this.price = menuP;
+    }
+
+    public void setDescription(String menuD){
+        this.description = menuD;
+    }
 }
 
