@@ -9,10 +9,6 @@ public class Kiosk {
         Scanner sc = new Scanner(System.in);
 
         while(true){
-            List<MenuItem> b = menu.get(0).getMenuList();
-            List<MenuItem> d = menu.get(1).getMenuList();
-            List<MenuItem> s = menu.get(2).getMenuList();
-
 
             System.out.println("[ MAIN MENU ]");
             System.out.printf("1. Burgers\n2. Drinks\n3. Sides\n0. 종료\n"); // ln으로 하면 3줄에 걸쳐서 작성해야된다.
@@ -29,12 +25,14 @@ public class Kiosk {
                 case 1:
                 case 2:
                 case 3:
-                    Menu.printSelectedCategory(selectNum, b, d, s); // 선택된 카테고리 출력
+                    Menu selectedCategoryMenu = menu.get(selectNum-1);
+                    selectedCategoryMenu.printSelectedMenu();
+
                     int selectNum2 = sc.nextInt(); // 출력한 카테고리의 메뉴 선택
                     if (selectNum2 == 0){
                         continue;
                     }
-                    MenuItem selectedMenu = Menu.getMenuItemInfo(selectNum,selectNum2, b,d,s);
+                    MenuItem selectedMenu = selectedCategoryMenu.getIndexMenu(selectNum2);
                     selectedMenu.printSelectedMenu(selectedMenu);
                     selectedMenu.printSelectedMenuMore(selectedMenu);
                     System.out.println("위 메뉴를 장바구니 추가하시겠습니까?");
