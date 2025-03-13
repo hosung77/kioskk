@@ -18,9 +18,13 @@ public class Cart {
     public void printedCart(){
         System.out.println("아래와 같이 주문 하시겠습니까?");
         System.out.println("[ Orders ]");
-        for(MenuItem cartItem : cart){
-            System.out.println(cartItem.getMenuName()+" | W "+cartItem.getPrice()+" | "+cartItem.getDescription());
-        }
+        cart.stream()
+                .forEach(c ->{
+                    System.out.println(String.format(
+                            "%-20s | W%-6.2f | %s",
+                            c.getMenuName(),c.getPrice(),c.getDescription()
+                    ));
+                });
     }
 
     // Cart에 담긴 물품의 총 가격을 출력해주는 메서드

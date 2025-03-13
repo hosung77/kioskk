@@ -10,6 +10,7 @@ public class Main {
         List<String> orderNames = List.of("Orders(장바구니를 확인 후 주문)","Cancel(주문 취소)");
         Order order = new Order(orderNames);
         List<Menu> allMenu = new ArrayList<>();
+        Discount discount;
 
         Menu burgers = new Menu("Burger"); // 객체 생성 동시에 카테고리 이름을 매개변수로 넣어서 카테고리 리스트에 값을 설정
         burgers.addItem(new MenuItem("ChickenBurger", 6.9, "토마토, 양상추, 쉑소스가 토핑된 치킨버거"));
