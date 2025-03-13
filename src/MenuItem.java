@@ -7,15 +7,13 @@ public class MenuItem {
     private String menuName; // 메뉴명
     private Double price; //  메뉴 가격
     private String description; // 메뉴 설명
-    private String category;
 
 
     // 생성자
-    public MenuItem(String menuName, Double price, String description,String category){
+    public MenuItem(String menuName, Double price, String description){
         this.menuName = menuName;
         this.price = price;
         this.description = description;
-        this.category = category;
     }
 
     // 메서드
@@ -50,9 +48,6 @@ public class MenuItem {
         return this.description;
     }
 
-    public String getCategory(){
-        return this.category;
-    }
 
     // 세터
 
