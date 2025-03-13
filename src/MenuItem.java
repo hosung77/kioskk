@@ -49,6 +49,7 @@ public class MenuItem {
     }
 
 
+
     // 세터
 
     public void setMenuName(String menuN){

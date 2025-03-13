@@ -5,7 +5,6 @@ import java.util.List;
 
 public class Menu {
     // 필드
-
     private List<MenuItem>menuList  = new ArrayList<>(); // MenuItem 클래스를 List로 관리
     private String category;
 
@@ -15,21 +14,28 @@ public class Menu {
         this.category = cate;
     }
 
-
-
     // 메서드
 
     public void addItem(MenuItem menuItem){
         menuList.add(menuItem);
     }
 
-    public void printSelectedCategory(int num){
+    public List<MenuItem> getMenuList() {
+        return menuList;
+    }
+
+    public String getCategory(){
+        return this.category;
+    }
+
+
+    public static void printSelectedCategory(int num, List<MenuItem> b, List<MenuItem> d,List<MenuItem> s){
         switch (num){
             case 1:
                 System.out.println("[ BURGERS MENU ]");
                 int menuNum1 =1;
-                for(MenuItem menuItem : burgers){
-                    System.out.println(menuNum1 +". " + menuItem.getMenuName()+"  | W "+menuItem.getPrice() + " | "+menuItem.getDescription());
+                for(MenuItem m : b){
+                    System.out.println(menuNum1 +". " + m.getMenuName()+"  | W "+m.getPrice() + " | "+m.getDescription());
                     menuNum1++;
                 }
                 System.out.println("0. 뒤로가기");
@@ -38,8 +44,8 @@ public class Menu {
             case 2:
                 System.out.println("[ Drinks MENU ]");
                 int menuNum2 =1;
-                for(MenuItem menuItem : drinks){
-                    System.out.println(menuNum2 +". " + menuItem.getMenuName()+"  | W "+menuItem.getPrice() + " | "+menuItem.getDescription());
+                for(MenuItem m : d){
+                    System.out.println(menuNum2 +". " + m.getMenuName()+"  | W "+m.getPrice() + " | "+m.getDescription());
                     menuNum2++;
                 }
                 System.out.println("0. 뒤로가기");
@@ -47,8 +53,8 @@ public class Menu {
             case 3:
                 System.out.println("[ Sides MENU ]");
                 int menuNum3 =1;
-                for(MenuItem menuItem : sides){
-                    System.out.println(menuNum3 +". " + menuItem.getMenuName()+"  | W "+menuItem.getPrice() + " | "+menuItem.getDescription());
+                for(MenuItem m : s){
+                    System.out.println(menuNum3 +". " + m.getMenuName()+"  | W "+m.getPrice() + " | "+m.getDescription());
                     menuNum3++;
                 }
                 System.out.println("0. 뒤로가기");
@@ -58,15 +64,16 @@ public class Menu {
         }
     }
 
-    public MenuItem getMenuItem(int num1, int num2){
+
+    public static MenuItem getMenuItemInfo(int num1, int num2,List<MenuItem> b, List<MenuItem> d,List<MenuItem> s){
         if(num1 == 1){
-            MenuItem menuItem = burgers.get(num2 -1);
+            MenuItem menuItem = b.get(num2 -1);
             return menuItem;
         } else if (num1 == 2) {
-            MenuItem menuItem2 = drinks.get(num2 -1);
+            MenuItem menuItem2 = d.get(num2 -1);
             return  menuItem2;
         } else if (num1 == 3){
-            MenuItem menuItem3 = sides.get(num2 -1);
+            MenuItem menuItem3 = s.get(num2 -1);
             return  menuItem3;
         } else {
             return null;
