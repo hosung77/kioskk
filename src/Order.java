@@ -1,6 +1,7 @@
 import javax.swing.plaf.synth.SynthDesktopIconUI;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Scanner;
 
 public class Order {
     private List<String> orders = new ArrayList<>();
@@ -28,7 +29,17 @@ public class Order {
 
         switch (choiceNum) {
             case 1:
-                System.out.printf("총 금액은 W %.1f 입니다.\n", totalPrice);
+                System.out.println("할인 정보를 입력해주세요.");
+                int num = 1;
+                for(Discount d: Discount.values()){
+                    System.out.print(num+". ");
+                    System.out.println(d.name()+" : "+ (d.getDiscountRatio()*100)+"%");
+                    num++;
+                }
+                Scanner sc = new Scanner(System.in);
+                int selectedType = sc.nextInt();
+                double seltectedDiscountRatio = Discount.getSelectedRatio(selectedType);
+                System.out.printf("총 금액은 W %.2f 입니다.\n", totalPrice * (1-seltectedDiscountRatio));
                 System.exit(0);
             case 2:
                 break;
