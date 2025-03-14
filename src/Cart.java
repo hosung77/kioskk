@@ -1,5 +1,6 @@
 import java.util.ArrayList;
 import java.util.List;
+import java.util.concurrent.atomic.AtomicInteger;
 
 public class Cart {
     private List<MenuItem> cart = new ArrayList<>();
@@ -27,6 +28,20 @@ public class Cart {
                 });
     }
 
+    // 메뉴를 삭제하기 위해 장바구니의 메뉴목록을 출력해주는 메서드
+    public void printedForDeleteCartMenu(){
+        AtomicInteger num = new AtomicInteger(1);
+        cart.stream()
+                .forEach(c ->{
+                    System.out.println(String.format(
+                            "%-3d %-20s | W%-6.2f | %s",
+                            num.getAndIncrement(),
+                            c.getMenuName(),c.getPrice(),c.getDescription()
+                    ));
+                });
+        System.out.println("선택하신 메뉴가 삭제 되었습니다.");
+    }
+
     // Cart에 담긴 물품의 총 가격을 출력해주는 메서드
     public void printTotalPrice(){
         double totalPrice = 0;
@@ -47,5 +62,9 @@ public class Cart {
     }
 
 
+    public void removeCartItem(int num){
+        String name = cart.get(num-1).getMenuName();
+        cart.removeIf(s -> s.getMenuName().equals(name));  // 해당 이름의 메뉴 삭제
+    }
 
 }
