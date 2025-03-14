@@ -7,7 +7,7 @@ import java.util.Scanner;
 public class Main {
     public static void main(String[] args) {
         Cart cart = new Cart();
-        List<String> orderNames = List.of("Orders(장바구니를 확인 후 주문)","Cancel(주문 취소)");
+        List<String> orderNames = List.of("Orders(장바구니를 확인 후 주문)","Cancel(주문 취소)","장바구니 물품 삭제");
         Order order = new Order(orderNames);
         List<Menu> allMenu = new ArrayList<>();
         Discount discount;

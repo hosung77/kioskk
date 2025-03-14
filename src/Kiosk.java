@@ -66,6 +66,13 @@ public class Kiosk {
                 case 5:
                     System.out.println("주문을 종료합니다.");
                     System.exit(0);
+                case 6:
+                    System.out.println("장바구니에서 빼고 싶은 물품을 선택해주세요.");
+                    cart.printedForDeleteCartMenu();
+                    int selectedItem = sc.nextInt();
+                    cart.removeCartItem(selectedItem);
+                    continue;
+
                 default:
                     System.out.println("잘못된 숫자입니다. 다시 입력해주세요.");
                     continue; // 잘못된 입력은 다시 입력 받도록
