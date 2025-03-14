@@ -39,7 +39,7 @@ https://github.com/hosung77/kioskk
 
 ## 4️⃣ 브랜치 개발 순서
 
-feature/nec_lv1 ~ lv 5 -> feature/chall_lv1 -> feature/fix_category ~ 2 -> feature/fix_menuList -> feature/chall_lv2 -> feature/fix_chall_lv2
+feature/nec_lv1 ~ lv 5 -> feature/chall_lv1 -> feature/fix_category ~ 2 -> feature/fix_menuList -> feature/chall_lv2 -> feature/fix_chall_2
 
 ## 5️⃣ 주요 기능
 
