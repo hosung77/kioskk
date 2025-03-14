@@ -30,14 +30,18 @@ https://github.com/hosung77/kioskk
 3. Main에서 실행
 
 ***
-##  3️⃣ Git 전략
+## 3️⃣ Git 전략
 
 - gitflow 방식 적용
 
 브랜치는 main, dev, **feature/***로 나누어 관리하였으며, 기능 개발은 feature 브랜치에서 진행한 후,
 기능 단위로 dev 브랜치에 Pull Request를 통해 병합하였다. 전체 기능 개발이 완료되면, dev 브랜치를 main에 병합하여 최종 코드를 반영하였다.
 
-##  4️⃣ 주요 기능
+## 4️⃣ 브랜치 개발 순서
+
+feature/nec_lv1 ~ lv 5 -> feature/chall_lv1 -> feature/fix_category ~ 2 -> feature/fix_menuList -> feature/chall_lv2
+
+## 5️⃣ 주요 기능
 
 ### ✅ **카테고리 선택**
 
